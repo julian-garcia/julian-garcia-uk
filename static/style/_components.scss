@@ -1,0 +1,38 @@
+html, body {
+  background-color: $light-grey;
+}
+
+.active-border {
+  border-radius: 3px;
+  box-shadow: 0px 0px 8px 5px rgba(122,122,122,1);
+  -webkit-box-shadow: 0px 0px 8px 5px rgba(122,122,122,1);
+  -moz-box-shadow: 0px 0px 8px 5px rgba(122,122,122,1);
+}
+
+.inactive-border {
+  border-radius: 3px;
+  box-shadow: 0px 0px 8px 5px rgba(200,200,200,1);
+  -webkit-box-shadow: 0px 0px 8px 5px rgba(200,200,200,1);
+  -moz-box-shadow: 0px 0px 8px 5px rgba(200,200,200,1);
+}
+
+.main-menu {
+  .logo-image {
+    border-bottom-left-radius: 3px;
+  }
+
+  .contact-button {
+    display: none;
+    @include breakpoint(phablet) {
+      display: inline-flex;
+    }
+  }
+
+  .contact-button-mobile {
+    display: inline-flex;
+    @include breakpoint(phablet) {
+      display: none;
+    }
+  }
+
+}

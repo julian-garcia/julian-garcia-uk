@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Asap|Markazi+Text" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+  <link rel="stylesheet" href="{% static 'style/main.min.css' %}">
+  <title>{% block page_title%}{% endblock %}</title>
+</head>
+<body>
+  <div class="container">
+    <nav class="level box is-mobile is-paddingless columns main-menu active-border" role="navigation" aria-label="main navigation">
+      <span class="level-item column is-paddingless is-marginless is-one-fifth has-text-left">
+        <a class="link has-text-left" href="{% url 'index' %}">
+          <img class="logo-image" src="{{MEDIA_URL}}images/jg.svg" alt="Julian Garcia">
+        </a>
+      </span>
+      <span class="level-item column is-marginless is-three-fifths has-text-centered">
+        <h1 class="is-size-3 is-size-4-mobile">Julian Garcia</h1>
+        <h2 class="is-size-6 is-size-7-mobile">Full stack web developer</h2>
+      </span>
+      <span class="level-item column is-marginless is-one-fifth has-text-right">
+        <a href="#" class="button contact-button"><h3><i class="fas fa-at"></i> Contact</h3></a>
+        <a href="#" class="button contact-button-mobile"><h3><i class="fas fa-at"></i></h3></a>
+      </span>
+    </nav>
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>
