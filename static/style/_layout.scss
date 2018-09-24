@@ -1,10 +1,51 @@
-.main-menu {
+.columns.main-menu {
   // Main navigation styling
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 2.5rem 0;
   max-height: 80px;
 
   .logo-image {
     max-height: 100px;
     margin-top: -20px;
+  }
+
+  .contact-button {
+    display: none;
+    @include breakpoint(phablet) {
+      display: inline-flex;
+    }
+  }
+
+  .contact-button-mobile {
+    display: inline-flex;
+    @include breakpoint(phablet) {
+      display: none;
+    }
+  }
+}
+
+.side-nav {
+  .button {
+    display: block;
+    margin-bottom: .3rem;
+  }
+
+  @include breakpoint(phablet) {
+    .button {
+      width: calc(33.33% - 3px);
+      box-sizing: border-box;
+      display:inline-block;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    width: 20%;
+    margin-right: 2rem;
+    float:left;
+
+    .button {
+      width: 100%;
+      margin-bottom: 2rem;
+      display:block;
+    }
   }
 }

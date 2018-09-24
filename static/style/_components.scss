@@ -20,19 +20,20 @@ html, body {
   .logo-image {
     border-bottom-left-radius: 3px;
   }
+}
 
-  .contact-button {
-    display: none;
-    @include breakpoint(phablet) {
-      display: inline-flex;
-    }
+.side-nav {
+  .button {
+    text-align: left;
   }
 
-  .contact-button-mobile {
-    display: inline-flex;
-    @include breakpoint(phablet) {
-      display: none;
-    }
+  .side-nav-icon {
+    width: 30px;
+    font-size: 1.4rem;
   }
 
+  .side-nav-text {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+  }
 }
