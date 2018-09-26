@@ -2,5 +2,23 @@
 {% load staticfiles %}
 {% block page_title %}Julian Garcia{% endblock %}
 {% block content %}
-<p>test</p>
+<div class="page-content home-content">
+  <div class="logos columns is-mobile">
+    <div class="column"><i class="fab fa-html5"></i></div>
+    <div class="column"><i class="fab fa-css3"></i></div>
+    <div class="column"><i class="fab fa-sass"></i></div>
+    <div class="column"><i class="fab fa-js"></i></div>
+    <div class="column"><i class="fab fa-python"></i></div>
+  </div>
+  <div class="home-text">
+    <p>Test</p>
+  </div>
+  <div class="logos images">
+    <img src="{{MEDIA_URL}}images/django.png" alt="django">
+    <img src="{{MEDIA_URL}}images/jquery.png" alt="jquery">
+    <img src="{{MEDIA_URL}}images/flask.png" alt="flask">
+    <img src="{{MEDIA_URL}}images/heroku.png" alt="heroku">
+    <img src="{{MEDIA_URL}}images/sas.png" alt="sas">
+  </div>
+</div>
 {% endblock %}

@@ -49,3 +49,21 @@
     }
   }
 }
+
+.page-content {
+  @include breakpoint(tablet) {
+    width: 60%;
+    float:left;
+    .home-text {
+      float: left;
+    }
+    &.home-content {
+      .logos.images {
+        width: 60px;
+        margin-right: 60px;
+        float:right;
+        img {display: block;}
+      }
+    }
+  }
+}
