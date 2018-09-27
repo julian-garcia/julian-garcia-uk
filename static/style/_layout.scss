@@ -24,6 +24,8 @@
 }
 
 .side-nav {
+  margin-bottom: 2rem;
+
   .button {
     display: block;
     margin-bottom: .3rem;
@@ -51,6 +53,22 @@
 }
 
 .page-content {
+  &.home-content {
+    .logos {
+      img {
+        width: 50%;
+        vertical-align: middle;
+      }
+      .img-col {
+        display: inline-block;
+        width: calc(20% - 4px);
+        text-align: center;
+      }
+      .column {
+        text-align: center;
+      }
+    }
+  }
   @include breakpoint(tablet) {
     width: 60%;
     float:left;
@@ -60,9 +78,14 @@
     &.home-content {
       .logos.images {
         width: 60px;
-        margin-right: 60px;
+        margin-right: 30px;
         float:right;
-        img {display: block;}
+
+        img {width: 60px;}
+        .img-col {
+          width: 60px;
+          margin-bottom: 1rem;
+        }
       }
     }
   }

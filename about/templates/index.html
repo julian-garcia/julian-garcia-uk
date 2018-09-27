@@ -14,11 +14,11 @@
     <p>Test</p>
   </div>
   <div class="logos images">
-    <img src="{{MEDIA_URL}}images/django.png" alt="django">
-    <img src="{{MEDIA_URL}}images/jquery.png" alt="jquery">
-    <img src="{{MEDIA_URL}}images/flask.png" alt="flask">
-    <img src="{{MEDIA_URL}}images/heroku.png" alt="heroku">
-    <img src="{{MEDIA_URL}}images/sas.png" alt="sas">
+    <div class="img-col"><img src="{% static 'images/django.png' %}" alt="django"></div>
+    <div class="img-col"><img src="{% static 'images/jquery.png' %}" alt="jquery"></div>
+    <div class="img-col"><img src="{% static 'images/flask.png' %}" alt="flask"></div>
+    <div class="img-col"><img src="{% static 'images/heroku.png' %}" alt="heroku"></div>
+    <div class="img-col"><img src="{% static 'images/sas.png' %}" alt="sas"></div>
   </div>
 </div>
 {% endblock %}
