@@ -52,6 +52,10 @@
   }
 }
 
+.site-container {
+  margin: 0 30px;
+}
+
 .page-content {
   &.home-content {
     .logos {
@@ -68,24 +72,40 @@
         text-align: center;
       }
     }
+    .home-text {
+      width: 100%;
+    }
   }
   @include breakpoint(tablet) {
-    width: 60%;
+    width: calc(100% - 20% - 2rem);
     float:left;
-    .home-text {
-      float: left;
-    }
+
     &.home-content {
+      .home-text {
+        float: left;
+        width: 50%;
+      }
+
+      .logos.columns {
+        width: 60%;
+      }
+
       .logos.images {
         width: 60px;
         margin-right: 30px;
-        float:right;
+        float:left;
 
         img {width: 60px;}
         .img-col {
           width: 60px;
           margin-bottom: 1rem;
         }
+      }
+
+      .coding-habits {
+        float: left;
+        width: calc(100% - 50% - 90px) !important;
+        height: calc(100% - 50% - 90px) !important;
       }
     }
   }

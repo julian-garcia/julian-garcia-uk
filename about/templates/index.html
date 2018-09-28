@@ -11,7 +11,8 @@
     <div class="column"><i class="fab fa-python"></i></div>
   </div>
   <div class="home-text">
-    <p>Test</p>
+    <p>The experience I have with the surrounding web languages, frameworks and platforms is show cased in my public GitHub repositories.</p>
+    <p>Peruse my portfolio to experience deployed and usable implementations of my projects. Feel free to get in touch with any comments or suggestions.</p>
   </div>
   <div class="logos images">
     <div class="img-col"><img src="{% static 'images/django.png' %}" alt="django"></div>
@@ -20,5 +21,10 @@
     <div class="img-col"><img src="{% static 'images/heroku.png' %}" alt="heroku"></div>
     <div class="img-col"><img src="{% static 'images/sas.png' %}" alt="sas"></div>
   </div>
+  <canvas id="coding-chart" class="coding-habits" width="400" height="400"></canvas>
 </div>
+{% endblock %}
+{% block chart_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<script src="{% static 'scripts/coding_chart.js' %}"></script>
 {% endblock %}

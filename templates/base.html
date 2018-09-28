@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +9,12 @@
   <link href="https://fonts.googleapis.com/css?family=Asap|Markazi+Text" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+  <!-- <link rel="stylesheet" href="{% static 'style/main.min.css' %}"> -->
   <link rel="stylesheet" href="{% static 'style/main.min.css' %}">
   <title>{% block page_title%}{% endblock %}</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container-full site-container">
     <nav class="level box is-mobile is-paddingless columns main-menu active-border" role="navigation" aria-label="main navigation">
       <span class="level-item column is-paddingless is-marginless is-one-fifth has-text-left">
         <a class="link has-text-left" href="{% url 'index' %}">
@@ -57,5 +59,6 @@
     {% block content %}
     {% endblock %}
   </div>
+  {% block chart_js %}{% endblock %}
 </body>
 </html>
