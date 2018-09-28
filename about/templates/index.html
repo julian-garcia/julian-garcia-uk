@@ -12,6 +12,7 @@
   </div>
   <div class="home-text">
     <p>The experience I have with the surrounding web languages, frameworks and platforms is show cased in my public GitHub repositories.</p>
+    <br>
     <p>Peruse my portfolio to experience deployed and usable implementations of my projects. Feel free to get in touch with any comments or suggestions.</p>
   </div>
   <div class="logos images">
@@ -21,10 +22,14 @@
     <div class="img-col"><img src="{% static 'images/heroku.png' %}" alt="heroku"></div>
     <div class="img-col"><img src="{% static 'images/sas.png' %}" alt="sas"></div>
   </div>
+  <div class="coding-habits-title"><h3 class="coding-habits-heading">My Coding Habits</h3></div>
   <canvas id="coding-chart" class="coding-habits" width="400" height="400"></canvas>
 </div>
 {% endblock %}
 {% block chart_js %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<script type="text/javascript">
+  const languages = {{ languages | safe }};
+</script>
 <script src="{% static 'scripts/coding_chart.js' %}"></script>
 {% endblock %}

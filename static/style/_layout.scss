@@ -75,6 +75,19 @@
     .home-text {
       width: 100%;
     }
+    .coding-habits-title {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+  @include breakpoint(phablet) {
+    &.home-content {
+      .coding-habits {
+        width: 50% !important;
+        height: 50% !important;
+        margin: 0 auto;
+      }
+    }
   }
   @include breakpoint(tablet) {
     width: calc(100% - 20% - 2rem);
@@ -103,6 +116,14 @@
       }
 
       .coding-habits {
+        float: left;
+        width: calc(100% - 50% - 90px) !important;
+        height: calc(100% - 50% - 90px) !important;
+      }
+
+      .coding-habits-title {
+        margin-top: -4rem;
+        margin-bottom: 0;
         float: left;
         width: calc(100% - 50% - 90px) !important;
         height: calc(100% - 50% - 90px) !important;
