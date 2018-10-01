@@ -79,13 +79,31 @@
       margin-top: 2rem;
       margin-bottom: 1rem;
     }
+
+    .github {
+      margin-top: 2rem;
+      min-height: 30px;
+      .sub-heading {
+        margin-bottom: 1rem;
+      }
+    }
   }
   @include breakpoint(phablet) {
     &.home-content {
+      .coding-habits-title {
+        width: 50% !important;
+        height: 30px !important;
+      }
       .coding-habits {
+        float: left;
         width: 50% !important;
         height: 50% !important;
-        margin: 0 auto;
+      }
+      .github {
+        width: 50%;
+        float: left;
+        padding: 1rem;
+        margin-top: calc(-30px - 2rem);
       }
     }
   }
@@ -117,6 +135,7 @@
 
       .coding-habits {
         float: left;
+        padding: 2rem;
         width: calc(100% - 50% - 90px) !important;
         height: calc(100% - 50% - 90px) !important;
       }
@@ -127,6 +146,15 @@
         float: left;
         width: calc(100% - 50% - 90px) !important;
         height: calc(100% - 50% - 90px) !important;
+      }
+
+      .github {
+        clear: both;
+        width: 100%;
+        margin: 2rem 0;
+        .sub-heading {
+          text-align: left;
+        }
       }
     }
   }

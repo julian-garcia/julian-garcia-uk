@@ -22,8 +22,11 @@
     <div class="img-col"><img src="{% static 'images/heroku.png' %}" alt="heroku"></div>
     <div class="img-col"><img src="{% static 'images/sas.png' %}" alt="sas"></div>
   </div>
-  <div class="coding-habits-title"><h3 class="coding-habits-heading">My Coding Habits</h3></div>
-  <canvas id="coding-chart" class="coding-habits" width="400" height="400"></canvas>
+  <div class="coding-habits-title"><h3 class="sub-heading"><i class="fas fa-laptop-code"></i> My Coding Habits</h3></div>
+  <canvas id="coding-chart" class="coding-habits inactive-border" width="400" height="400"></canvas>
+  <div class="github">
+    <h3 class="sub-heading"><i class="fab fa-github"></i> Github Repositories</h3>
+  </div>
 </div>
 {% endblock %}
 {% block chart_js %}
@@ -32,4 +35,5 @@
   const languages = {{ languages | safe }};
 </script>
 <script src="{% static 'scripts/coding_chart.js' %}"></script>
+<script src="{% static 'scripts/github.js' %}"></script>
 {% endblock %}
