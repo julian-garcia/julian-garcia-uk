@@ -2,7 +2,6 @@ async function githubRepos() {
   let github_repos_response = await fetch('https://api.github.com/users/julian-garcia/repos');
   let github_repos = await github_repos_response.json();
   let github_div = document.querySelector('.github');
-  console.log(github_repos);
 
   github_repos.forEach(function(repo) {
     let repo_link = document.createElement('a');

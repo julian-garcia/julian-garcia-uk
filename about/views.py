@@ -1,12 +1,16 @@
 from django.shortcuts import render
-import requests, json
+import requests, json, os
 
 def index(request):
-    languages = requests.get('https://wakatime.com/share/@c3419dbf-0038-499d-9d18-532e0b87876f/5936d31f-1414-404c-a67b-98f15a6dbb51.json')
+    languages = requests.get(os.environ.get('WAKATIME_URL'))
     langs_list = json.loads(languages.content)['data']
+
+    languages_mobile_svg = os.environ.get('WAKATIME_URL_MOBILE')
 
     langs_dict = {}
     for lang in langs_list:
         langs_dict[lang['name']] = lang['percent']
 
-    return render(request, 'index.html', {'languages': json.dumps(langs_dict)})
+    return render(request, 'index.html',
+                  {'languages': json.dumps(langs_dict),
+                   'languages_mobile_svg': languages_mobile_svg})

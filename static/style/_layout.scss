@@ -10,14 +10,17 @@
 
   .contact-button {
     display: none;
-    @include breakpoint(phablet) {
+    @include breakpoint(tablet) {
       display: inline-flex;
     }
   }
 
   .contact-button-mobile {
-    display: inline-flex;
+    display: none;
     @include breakpoint(phablet) {
+      display: inline-flex;
+    }
+    @include breakpoint(tablet) {
       display: none;
     }
   }
@@ -25,6 +28,7 @@
 
 .side-nav {
   margin-bottom: 2rem;
+  display: none;
 
   .button {
     display: block;
@@ -32,6 +36,7 @@
   }
 
   @include breakpoint(phablet) {
+    display: block;
     .button {
       width: calc(33.33% - 3px);
       box-sizing: border-box;
@@ -54,6 +59,15 @@
 
 .site-container {
   margin: 0 30px;
+  .mobile-burger {
+    // margin: -2rem 0 1rem 0;
+  }
+
+  @include breakpoint(phablet) {
+    .mobile-burger {
+      display: none;
+    }
+  }
 }
 
 .page-content {
@@ -79,6 +93,9 @@
       margin-top: 2rem;
       margin-bottom: 1rem;
     }
+    .coding-habits {
+      display: none !important;
+    }
 
     .github {
       margin-top: 2rem;
@@ -98,6 +115,12 @@
         float: left;
         width: 50% !important;
         height: 50% !important;
+      }
+      .coding-habits {
+        display: block !important;
+      }
+      .coding-habits-mobile {
+        display: none;
       }
       .github {
         width: 50%;
@@ -136,16 +159,18 @@
       .coding-habits {
         float: left;
         padding: 2rem;
-        width: calc(100% - 50% - 90px) !important;
-        height: calc(100% - 50% - 90px) !important;
+        width: calc(100% - 55% - 90px) !important;
+        height: calc(100% - 55% - 90px) !important;
+        margin-left: 2%;
       }
 
       .coding-habits-title {
         margin-top: -4rem;
         margin-bottom: 0;
         float: left;
-        width: calc(100% - 50% - 90px) !important;
-        height: calc(100% - 50% - 90px) !important;
+        width: calc(100% - 55% - 90px) !important;
+        height: calc(100% - 55% - 90px) !important;
+        margin-left: 2%;
       }
 
       .github {

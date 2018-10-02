@@ -28,6 +28,9 @@
       <span class="level-item column is-marginless is-one-fifth has-text-right">
         <a href="#" class="button contact-button"><h3><i class="fas fa-at"></i> Contact</h3></a>
         <a href="#" class="button contact-button-mobile"><h3><i class="fas fa-at"></i></h3></a>
+        <a id="mobile-menu-button" class="button mobile-burger" aria-label="mobile menu button">
+          <h3><i class="fas fa-bars"></i></h3>
+        </a>
       </span>
     </nav>
     <div class="side-nav">
@@ -60,5 +63,6 @@
     {% endblock %}
   </div>
   {% block chart_js %}{% endblock %}
+  <script src="{% static 'scripts/ui.js' %}"></script>
 </body>
 </html>
