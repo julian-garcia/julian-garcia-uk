@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}Julian Garcia - Experience{% endblock %}
+{% block content %}
+<div class="page-content experience-content">
+  {% for item in experience %}
+  <h4>{{ item.position }}</h4>
+  <h4>{{ item.company }}</h4>
+  <h4>{{ item.description }}</h4>
+  <h4>{{ item.start_date }}</h4>
+  <h4>{{ item.end_date }}</h4>
+  <h4>{{ item.external_link }}</h4>
+  <h4>{{ item.logo.url }}</h4>
+  {% endfor %}
+</div>
+{% endblock %}

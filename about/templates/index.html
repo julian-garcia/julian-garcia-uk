@@ -9,11 +9,12 @@
     <div class="column"><i class="fab fa-sass"></i></div>
     <div class="column"><i class="fab fa-js"></i></div>
     <div class="column"><i class="fab fa-python"></i></div>
+    <div class="column"><i class="fab fa-github"></i></div>
   </div>
   <div class="home-text">
     <p>The experience I have with the surrounding web languages, frameworks and platforms is show cased in my public GitHub repositories.</p>
     <br>
-    <p>Peruse my portfolio to experience deployed and usable implementations of my projects. Feel free to get in touch with any comments or suggestions.</p>
+    <p>Peruse my portfolio to experience deployed and usable implementations of my projects. Feel free to <a href="#">get in touch</a> with any comments or suggestions.</p>
   </div>
   <div class="logos images">
     <div class="img-col"><img src="{% static 'images/django.png' %}" alt="django"></div>
@@ -22,7 +23,12 @@
     <div class="img-col"><img src="{% static 'images/heroku.png' %}" alt="heroku"></div>
     <div class="img-col"><img src="{% static 'images/sas.png' %}" alt="sas"></div>
   </div>
-  <div class="coding-habits-title"><h3 class="sub-heading"><i class="fas fa-laptop-code"></i> My Coding Habits</h3></div>
+  <div class="coding-habits-title">
+    <h3 class="sub-heading">
+      <i class="fas fa-laptop-code"></i> My Coding Habits
+    </h3>
+    <p class="has-text-centered">({{ coding_hours }} hours last 30 days)</p>
+  </div>
   <canvas id="coding-chart" class="coding-habits inactive-border" width="400" height="400"></canvas>
   <figure class="coding-habits-mobile inactive-border">
     <embed src="{{ languages_mobile_svg }}"></embed>

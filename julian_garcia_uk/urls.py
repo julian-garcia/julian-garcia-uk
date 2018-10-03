@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from about.views import index
 from about import urls as urls_about
+from experience import urls as urls_experience
 from django.conf.urls.static import static
 from .settings import MEDIA_URL, MEDIA_ROOT
 
@@ -24,4 +25,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('about/', include(urls_about)),
+    path('experience/', include(urls_experience)),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
