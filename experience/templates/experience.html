@@ -4,13 +4,23 @@
 {% block content %}
 <div class="page-content experience-content">
   {% for item in experience %}
-  <h4>{{ item.position }}</h4>
-  <h4>{{ item.company }}</h4>
-  <h4>{{ item.description }}</h4>
-  <h4>{{ item.start_date }}</h4>
-  <h4>{{ item.end_date }}</h4>
-  <h4>{{ item.external_link }}</h4>
-  <h4>{{ item.logo.url }}</h4>
+    {% if forloop.counter|divisibleby:2 %}
+    <div class="timeline-item timeline-item-right">
+    {% else %}
+    <div class="timeline-item timeline-item-left">
+    {% endif %}
+      <p class="date-range">{{ item.start_date }} - {{ item.end_date }}</p>
+      {% if item.logo %}
+      <img class="company-logo" src="{{ item.logo.url }}">
+      {% endif %}
+      <h3 class="position-heading sub-heading has-text-left">{{ item.position }}</h3>
+      <h3>{{ item.company }}
+        {% if item.external_link %}
+        <a href="{{ item.external_link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+        {% endif %}
+      </h3>
+      <p class="paragraph-text">{{ item.description }}</p>
+    </div>
   {% endfor %}
 </div>
 {% endblock %}

@@ -105,6 +105,12 @@
       }
     }
   }
+  &.experience-content {
+    .timeline-item {
+      margin-bottom: 3rem;
+    }
+  }
+
   @include breakpoint(phablet) {
     &.home-content {
       .coding-habits-title {
@@ -127,6 +133,18 @@
         float: left;
         padding: 1rem;
         margin-top: calc(-30px - 3.5rem);
+      }
+    }
+    &.experience-content {
+      .timeline-item {
+        width: 50%;
+      }
+      .timeline-item-left {
+        float: left;
+      }
+      .timeline-item-right {
+        float: right;
+        margin: 8rem 1px 0 -1px;
       }
     }
   }
