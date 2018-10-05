@@ -10,7 +10,7 @@ class PortfolioItem(models.Model):
     start_date = models.DateField(blank=False)
     end_date = models.DateField(null=True, blank=True)
 
-    # Convert this to a list to facilitate looping to render logos in the template
+    # Convert this to a list to facilitate looping to render logos in the template portfolio.html
     def technology_list(self):
         return self.technology.split(',')
 

@@ -2,7 +2,6 @@ const mobile_button_menu = document.getElementById('mobile-menu-button');
 const side_nav = document.querySelector('.side-nav');
 const my_name = 'Julian Garcia';
 const page_title = document.title.replace(`${my_name} - `,'');
-const screenshot_link = document.getElementById('screenshot');
 
 // On page load highlight the relevant navigation menu item based on the current page
 document.addEventListener('DOMContentLoaded', function(e) {
@@ -44,7 +43,8 @@ window.addEventListener('click', function(e) {
 
   // Show the relevant screenshot by passing the modal attribute of the modal trigger
   // link to retrieve and show the modal with an id that matches the attribute
-  if (target_classes.includes('portfolio-link') && target_classes.includes('screenshot')) {
+  if ((target_classes.includes('portfolio-link') &&
+       target_classes.includes('screenshot')) || target_classes.includes('portfolio-image')) {
     const modal_attribute = e.target.getAttribute('modal');
     document.getElementById(modal_attribute).style.display = 'block';
     e.preventDefault();

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}Julian Garcia - Attending{% endblock %}
+{% block content %}
+<div class="page-content attending-content">
+  <div id="map"></div>
+</div>
+{% endblock %}
+{% block gmap_js %}
+<script type="text/javascript">
+  const coordinates = {{ coordinates | safe }};
+</script>
+<script src="{% static 'scripts/gmap.js' %}"></script>
+<script async defer src="{{ gmap_api_url }}/js?key={{ gmap_api_key }}&callback=initMap"></script>
+{% endblock %}
