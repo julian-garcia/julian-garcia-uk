@@ -2,6 +2,7 @@ const mobile_button_menu = document.getElementById('mobile-menu-button');
 const side_nav = document.querySelector('.side-nav');
 const my_name = 'Julian Garcia';
 const page_title = document.title.replace(`${my_name} - `,'');
+const screenshot_link = document.getElementById('screenshot');
 
 // On page load highlight the relevant navigation menu item based on the current page
 document.addEventListener('DOMContentLoaded', function(e) {
@@ -22,8 +23,8 @@ mobile_button_menu.addEventListener('mouseup', function(e) {
   e.preventDefault();
 });
 
-/* Ensure that the menu is only hidden on mobile screen sizes, otherwise */
-/* a browser window resize will hide the menu across all window widths   */
+/* Ensure that the menu is only hidden on mobile screen sizes, otherwise
+   a browser window resize will hide the menu across all window widths   */
 window.addEventListener('resize', function(e) {
   if (window.getComputedStyle(mobile_button_menu).display == 'none') {
     side_nav.style.display = 'block';
@@ -31,4 +32,21 @@ window.addEventListener('resize', function(e) {
     side_nav.style.display = 'none';
   }
   e.preventDefault();
+});
+
+window.addEventListener('click', function(e) {
+  const target_classes = e.target.className;
+
+  // Close the curently displayed modal
+  if (target_classes.includes('modal-close') || target_classes.includes('modal-background')) {
+    e.target.parentElement.style.display = 'none';
+  }
+
+  // Show the relevant screenshot by passing the modal attribute of the modal trigger
+  // link to retrieve and show the modal with an id that matches the attribute
+  if (target_classes.includes('portfolio-link') && target_classes.includes('screenshot')) {
+    const modal_attribute = e.target.getAttribute('modal');
+    document.getElementById(modal_attribute).style.display = 'block';
+    e.preventDefault();
+  }
 });

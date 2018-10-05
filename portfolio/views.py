@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import PortfolioItem
 
-# Create your views here.
+def portfolio(request):
+    portfolio = PortfolioItem.objects.all().order_by('title')
+    return render(request, 'portfolio.html', {'portfolio': portfolio})

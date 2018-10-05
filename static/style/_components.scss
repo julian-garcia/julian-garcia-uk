@@ -70,6 +70,20 @@ html, body {
       }
     }
   }
+  &.portfolio-content {
+    .portfolio-item {
+      margin-bottom: 2rem;
+    }
+    .portfolio-tech {
+      max-width: 50px;
+      float:left;
+      margin-right: 5px;
+    }
+    .portfolio-tech-icon {
+      line-height: 50px;
+      font-size: 25px;
+    }
+  }
   @include breakpoint(phablet) {
     &.experience-content {
       .timeline-item {
@@ -102,6 +116,28 @@ html, body {
         .date-range {
           float: left;
         }
+      }
+    }
+    &.portfolio-content {
+      .portfolio-item {
+        border-radius: 10px;
+        padding: 1rem;
+        overflow: hidden;
+      }
+      .portfolio-item-light {
+        background: white;
+      }
+      .portfolio-image {
+        margin-right: 1rem;
+      }
+      .portfolio-link {
+        display: block;
+        text-align: center;
+        font-size: 25px;
+      }
+      .portfolio-modal-image {
+        max-width: 80%;
+        width: unset;
       }
     }
   }

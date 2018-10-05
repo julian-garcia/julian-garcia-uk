@@ -9,7 +9,14 @@
     {% else %}
     <div class="timeline-item timeline-item-left">
     {% endif %}
-      <p class="date-range">{{ item.start_date }} - {{ item.end_date }}</p>
+      <p class="date-range">
+          {{ item.start_date }} -
+          {% if item.end_date %}
+            {{ item.end_date }}
+          {% else %}
+            Present 
+          {% endif %}
+      </p>
       {% if item.logo %}
       <img class="company-logo" src="{{ item.logo.url }}">
       {% endif %}

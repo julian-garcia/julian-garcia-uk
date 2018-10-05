@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}Julian Garcia - Portfolio{% endblock %}
+{% block content %}
+<div class="page-content portfolio-content">
+{% for item in portfolio %}
+  {% if forloop.counter|divisibleby:2 %}
+  <div class="portfolio-item">
+  {% else %}
+  <div class="portfolio-item portfolio-item-light">
+  {% endif %}
+    <div class="columns">
+      <div class="column is-3">
+        <img class="portfolio-image" src="{{ item.screenshot.url }}" alt="{{ item.title }}">
+      </div>
+      <div class="column is-8">
+        <h3 class="portfolio-title sub-heading has-text-left">{{ item.title }}</h3>
+        <p class="portfolio-description paragraph-text">{{ item.description }}</p>
+        {% if item.technology_list %}
+          {% for tech in item.technology_list %}
+            {% if tech.strip == "django" %}
+              <img class="portfolio-tech" src="{% static 'images/django.png' %}" alt="django">
+            {% endif %}
+            {% if tech.strip == "django" %}
+              <i class="portfolio-tech-icon fab fa-python"></i>
+            {% endif %}
+            {% if tech.strip == "javascript" %}
+              <i class="portfolio-tech-icon fab fa-js"></i>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="column">
+        <a href="{{ item.code_url }}" class="portfolio-link" target="_blank">
+          <i class="fas fa-code"></i>
+        </a>
+        <a href="{{ item.frontend_url }}" class="portfolio-link" target="_blank">
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="{{ item.screenshot.url }}" class="portfolio-link screenshot" target="_blank" modal="modal{{ forloop.counter }}">
+          <i class="portfolio-link screenshot far fa-image" modal="modal{{ forloop.counter }}"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal{{ forloop.counter }}">
+    <div class="modal-background"></div>
+    <div class="modal-content portfolio-modal-image">
+      <p class="image">
+        <img src="{{ item.screenshot.url }}">
+      </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

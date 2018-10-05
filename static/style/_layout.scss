@@ -109,6 +109,9 @@
     .timeline-item {
       margin-bottom: 3rem;
     }
+    .timeline-item-left {
+      clear: both;
+    }
   }
 
   @include breakpoint(phablet) {
