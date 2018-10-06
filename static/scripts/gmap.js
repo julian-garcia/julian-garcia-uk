@@ -1,12 +1,17 @@
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
-    center: coordinates
+    center: {lat: 51.515069, lng: -0.1107947},
+    mapTypeControl: false
   });
 
-  var marker = new google.maps.Marker({
-    position: coordinates,
-    map: map,
-    title: 'Hello World!'
+  let i = 0;
+  coordinates.forEach(function(coordinate) {
+    var marker = new google.maps.Marker({
+      position: coordinate,
+      map: map,
+      title: coord_labels[i]
+    });
+    i += 1;
   });
 }
