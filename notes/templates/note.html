@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}Julian Garcia - Note{% endblock %}
+{% block content %}
+<div class="page-content note-content">
+  <div class="columns">
+    <div class="column is-three-quarters-desktop">
+      <h3 class="sub-heading has-text-left">{{ note.note_title }}</h3>
+      <h4>{{ note.date_saved }}</h4>
+      <p class="paragraph-text">{{ note.note_body }}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
