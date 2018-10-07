@@ -4,12 +4,15 @@ h3,
 h4,
 h5,
 h6,
-.side-nav-text {
+.side-nav-text,
+button {
   font-family: 'Asap', sans-serif;
 }
 
 a,
 p,
-span {
+span,
+input,
+textarea {
   font-family: 'Markazi Text', serif;
 }

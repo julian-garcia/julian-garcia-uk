@@ -21,6 +21,7 @@ from experience import urls as urls_experience
 from portfolio import urls as urls_portfolio
 from attending import urls as urls_attending
 from notes import urls as urls_notes
+from contact import urls as urls_contact
 from django.conf.urls.static import static
 from .settings import MEDIA_URL, MEDIA_ROOT
 
@@ -32,4 +33,5 @@ urlpatterns = [
     path('portfolio/', include(urls_portfolio)),
     path('attending/', include(urls_attending)),
     path('notes/', include(urls_notes)),
+    path('contact/', include(urls_contact)),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)

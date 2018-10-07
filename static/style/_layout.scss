@@ -113,6 +113,11 @@
       clear: both;
     }
   }
+  &.notes-content {
+    .notes-col {
+      margin-bottom: 20px;
+    }
+  }
 
   @include breakpoint(phablet) {
     &.home-content {
@@ -148,6 +153,14 @@
       .timeline-item-right {
         float: right;
         margin: 8rem 1px 0 -1px;
+      }
+    }
+    &.notes-content {
+      margin: 0 -10px 0 -10px;
+      .notes-col {
+        width: calc(50% - 20px);
+        float:left;
+        margin: 0 10px 20px 10px;
       }
     }
   }
@@ -201,6 +214,15 @@
         .sub-heading {
           text-align: left;
         }
+      }
+    }
+  }
+  @include breakpoint(desktop) {
+    &.notes-content {
+      margin: 0 0 0 0px;
+      .notes-col {
+        width: calc(33% - 20px);
+        margin: 0 0 0 20px;
       }
     }
   }

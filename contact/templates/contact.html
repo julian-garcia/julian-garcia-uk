@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}Julian Garcia - Contact{% endblock %}
+{% block content %}
+<div class="page-content contact-content">
+  <div class="columns">
+    <div class="column is-8">
+      <form method='POST'>
+        {% csrf_token %}
+        {% for field in contact_form %}
+          {% if field.label == "Email Address" %}
+          <div class="field">
+            <div class="control has-icons-left has-icons-right">
+              {{ field }}
+              <span class="contact-form-icon icon is-small is-left">
+                <i class="fas fa-at"></i>
+              </span>
+            </div>
+          </div>
+          {% endif %}
+          {% if field.label == "Your Message" %}
+          <div class="field">
+            <div class="control has-icons-left">
+              {{ field }}
+              <span class="contact-form-icon icon is-small is-left">
+                <i class="fas fa-pencil-alt"></i>
+              </span>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+        <div class="field">
+          <div class="control has-icons-left">
+            <button class="contact-form-input input" type="submit">Send Message</button>
+            <span class="contact-form-icon icon is-small is-left">
+              <i class="fas fa-paper-plane"></i>
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="column is-4">
+      <h3>{{ post_message }}</h3>
+      <div class="contact-method inactive-border">
+        <span class="contact-method-icon">
+          <i class="far fa-envelope"></i>
+        </span>
+        <a class="sub-heading" href="mailto:julian.garcia.leoni@gmail.com" target="_blank">julian.garcia.uk@gmail.com</a>
+      </div>
+      <div class="contact-method inactive-border">
+        <span class="contact-method-icon">
+          <i class="fab fa-slack-hash"></i>
+        </span>
+        <a class="sub-heading" href="https://join.slack.com/t/julian-garcia/shared_invite/enQtNDQyMTM3MjU5NDQ3LWI3OTY5MzIyMGIyNWZmZTc0NjIwNmFkNjk0ZDcyMGY0MWZmZGEwN2JiOTk4NmY1ODYyNTc1MTUwYTJkN2E0YjQ" target="_blank">julian-garcia.uk</a>
+      </div>
+      <div class="contact-method inactive-border">
+        <span class="contact-method-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </span>
+        <a class="sub-heading" href="https://linkedin.com/in/juliangarcialeoni/" target="_blank">juliangarcialeoni</a>
+      </div>
+      <div class="contact-method inactive-border">
+        <span class="contact-method-icon">
+          <i class="fab fa-skype"></i>
+        </span>
+        <span class="skype-username sub-heading">julian.garcia.leoni</span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

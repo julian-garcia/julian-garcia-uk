@@ -3,33 +3,29 @@
 {% block page_title %}Julian Garcia - Notes{% endblock %}
 {% block content %}
 <div class="page-content notes-content">
-  <div class="columns">
-    {% for note in notes %}
-    <div class="column is-one-third-desktop is-half-tablet">
-      <div class="card">
-        <header class="card-header">
-          <h3 class="card-header-title sub-heading">
-            {{ note.note_title }}
-          </h3>
-          <span class="card-header-icon">
-            <span class="icon">
-              <i class="fas fa-sticky-note"></i>
-            </span>
+  {% for note in notes %}
+    <div class="card notes-col">
+      <header class="card-header">
+        <h3 class="card-header-title sub-heading">
+          {{ note.note_title }}
+        </h3>
+        <span class="card-header-icon">
+          <span class="icon">
+            <i class="fas fa-sticky-note"></i>
           </span>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            {{ note.note_body | truncatewords:10 }}
-            <br>
-            <span>{{ note.date_saved }}</span>
-          </div>
+        </span>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          {{ note.note_body | truncatewords:10 }}
+          <br>
+          <span>{{ note.date_saved }}</span>
         </div>
-        <footer class="card-footer">
-          <a href="{% url 'note' note.id %}" class="card-footer-item sub-heading">Read</a>
-        </footer>
       </div>
+      <footer class="card-footer">
+        <a href="{% url 'note' note.id %}" class="card-footer-item sub-heading">Read</a>
+      </footer>
     </div>
-    {% endfor %}
-  </div>
+  {% endfor %}
 </div>
 {% endblock %}

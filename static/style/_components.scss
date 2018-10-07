@@ -2,7 +2,7 @@ html, body {
   background-color: $light-grey;
 }
 
-.active-border {
+.active-border, .contact-method:hover {
   border-radius: 3px;
   box-shadow: 0px 0px 8px 5px rgba(122,122,122,1);
   -webkit-box-shadow: 0px 0px 8px 5px rgba(122,122,122,1);
@@ -100,6 +100,52 @@ html, body {
   &.attending-content {
     #map {
       height: 400px;
+    }
+  }
+  &.contact-content {
+    .contact-form-icon {
+      height: 100%;
+      background-color: grey;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .contact-form-input {
+      padding-left: 3.25rem;
+      cursor: pointer;
+    }
+    .contact-form-input:focus~.icon {
+      color: black;
+    }
+    .contact-method {
+      height: 30px;
+      border: 2px solid transparent;
+      margin-bottom: 1rem;
+
+      .contact-method-icon {
+        height: 30px;
+        width: 30px;
+        margin: -2px 0 0 -2px;
+        text-align: center;
+        background-color: black;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        color: white;
+        float:left;
+      }
+      i, .sub-heading {
+        line-height: 28px;
+        padding: 0 5px;
+      }
+      a, .skype-username {
+        display: block;
+        overflow: hidden;
+      }
+      .sub-heading {
+        color: black;
+      }
+      .skype-username {
+        cursor: default;
+      }
     }
   }
   @include breakpoint(phablet) {
