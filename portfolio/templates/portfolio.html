@@ -21,11 +21,29 @@
             {% if tech.strip == "django" %}
               <img class="portfolio-tech" src="{% static 'images/django.png' %}" alt="django">
             {% endif %}
-            {% if tech.strip == "django" %}
+            {% if tech.strip == "flask" %}
+              <img class="portfolio-tech" src="{% static 'images/flask.png' %}" alt="flask">
+            {% endif %}
+            {% if tech.strip == "jquery" %}
+              <img class="portfolio-tech" src="{% static 'images/jquery.png' %}" alt="jquery">
+            {% endif %}
+            {% if tech.strip == "sas" %}
+              <img class="portfolio-tech" src="{% static 'images/sas.png' %}" alt="sas">
+            {% endif %}
+            {% if tech.strip == "python" %}
               <i class="portfolio-tech-icon fab fa-python"></i>
             {% endif %}
             {% if tech.strip == "javascript" %}
               <i class="portfolio-tech-icon fab fa-js"></i>
+            {% endif %}
+            {% if tech.strip == "sass" %}
+              <i class="portfolio-tech-icon fab fa-sass"></i>
+            {% endif %}
+            {% if tech.strip == "html" %}
+              <i class="portfolio-tech-icon fab fa-html5"></i>
+            {% endif %}
+            {% if tech.strip == "css" %}
+              <i class="portfolio-tech-icon fab fa-css3"></i>
             {% endif %}
           {% endfor %}
         {% endif %}

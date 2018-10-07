@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}Julian Garcia - My CV{% endblock %}
+{% block content %}
+<div class="page-content cv-content">
+  <div class="columns">
+    <div class="column is-three-quarters-tablet headline">
+      <h3 class="sub-heading">{{ headline.section_title }}</h3>
+      <p class="paragraph-text">{{ headline.section_body }}</p>
+    </div>
+    <div class="column is-one-quarter-tablet has-text-centered cv-downloads">
+      <a href="{% static 'docs/julian_garcia.doc' %}" target="_blank"><i class="far fa-file-word"></i></a>
+      <a href="{% static 'docs/julian_garcia.pdf' %}" target="_blank"><i class="far fa-file-pdf"></i></a>
+      <a href="https://www.linkedin.com/in/juliangarcialeoni/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-three-quarters-tablet">
+      {% for section in sections %}
+        {% if section.section_title %}
+        <h3 class="sub-heading">{{ section.section_title }}</h3>
+        {% endif %}
+        {% if section.section_start_date %}
+        <span>{{ section.section_start_date }}</span>
+        {% endif %}
+        <p class="paragraph-text">{{ section.section_body }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

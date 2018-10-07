@@ -2,7 +2,10 @@ html, body {
   background-color: $light-grey;
 }
 
-.active-border, .contact-method:hover {
+.active-border,
+.contact-method:hover,
+.side-nav .button:hover,
+button:hover {
   border-radius: 3px;
   box-shadow: 0px 0px 8px 5px rgba(122,122,122,1);
   -webkit-box-shadow: 0px 0px 8px 5px rgba(122,122,122,1);
@@ -40,6 +43,14 @@ html, body {
 }
 
 .page-content {
+  a {
+    color: $link-teal;
+    font-weight: bold;
+    &:hover {
+      color: $link-hover-orange;
+    }
+  }
+
   .paragraph-text {
     font-size: 24px;
     line-height: 28px;
@@ -72,14 +83,12 @@ html, body {
   }
   &.portfolio-content {
     .portfolio-item {
-      margin-bottom: 2rem;
-    }
-    .portfolio-item-light {
       border-bottom: 2px solid black;
       padding-bottom: 2rem;
+      margin-bottom: 2rem;
     }
     .portfolio-tech {
-      max-width: 50px;
+      max-height: 50px;
       float:left;
       margin-right: 5px;
     }
@@ -106,12 +115,18 @@ html, body {
     .contact-form-icon {
       height: 100%;
       background-color: grey;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
     }
     .contact-form-input {
       padding-left: 3.25rem;
       cursor: pointer;
+    }
+    button.contact-form-input {
+      background-color: grey;
+      border-color: grey;
+      color: white;
+      text-align: center;
     }
     .contact-form-input:focus~.icon {
       color: black;
@@ -136,16 +151,21 @@ html, body {
         line-height: 28px;
         padding: 0 5px;
       }
-      a, .skype-username {
+      a {
         display: block;
         overflow: hidden;
       }
-      .sub-heading {
-        color: black;
-      }
-      .skype-username {
-        cursor: default;
-      }
+    }
+  }
+  &.cv-content {
+    .cv-downloads a {
+      font-size: 40px;
+      margin: 0 10px;
+    }
+  }
+  &.notes-content {
+    .notes-icon {
+      cursor: default;
     }
   }
   @include breakpoint(phablet) {
@@ -187,6 +207,7 @@ html, body {
         border-radius: 10px;
         padding: 1rem;
         overflow: hidden;
+        background: darken(white, 5);
       }
       .portfolio-item-light {
         background: white;
