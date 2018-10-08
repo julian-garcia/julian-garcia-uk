@@ -59,10 +59,10 @@
 
 .site-container {
   margin: 0 30px;
-  .mobile-burger {
-    // margin: -2rem 0 1rem 0;
-  }
 
+  @include breakpoint(mobile) {
+    margin: 0 10px;
+  }
   @include breakpoint(phablet) {
     .mobile-burger {
       display: none;
