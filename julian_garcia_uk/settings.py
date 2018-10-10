@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os, dj_database_url
+import os
 
 if os.environ.get('LOCAL'):
     if int(os.environ.get('LOCAL')) == 1:
@@ -96,7 +96,16 @@ if development:
         }
     }
 else:
-    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': 'julian-garcia-uk',
+                'USER': 'garcia',
+                'PASSWORD': os.environ.get('DBPASS'),
+                'HOST': 'julian-garcia-uk.cex2gewty9w6.eu-west-2.rds.amazonaws.com',
+                'PORT': '5432',
+            }
+        }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
