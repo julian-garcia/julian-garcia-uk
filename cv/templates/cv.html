@@ -21,7 +21,10 @@
         <h3 class="sub-heading">{{ section.section_title }}</h3>
         {% endif %}
         {% if section.section_start_date %}
-        <span>{{ section.section_start_date }}</span>
+          <span>
+            {{ section.section_start_date }}
+            {% if section.section_end_date %} - {{ section.section_end_date }} {% else %} - Present {% endif %}
+          </span>
         {% endif %}
         <p class="paragraph-text">{{ section.section_body }}</p>
       {% endfor %}
