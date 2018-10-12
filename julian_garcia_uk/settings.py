@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
+import os, dj_database_url
 
 if os.environ.get('LOCAL'):
     if int(os.environ.get('LOCAL')) == 1:
@@ -96,16 +96,7 @@ if development:
         }
     }
 else:
-    DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.postgresql',
-                'NAME': 'julian-garcia-uk',
-                'USER': 'garcia',
-                'PASSWORD': os.environ.get('DBPASS'),
-                'HOST': 'julian-garcia-uk.cex2gewty9w6.eu-west-2.rds.amazonaws.com',
-                'PORT': '5432',
-            }
-        }
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -161,7 +152,7 @@ STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 MEDIAFILES_LOCATION = 'media'
-MEDIA_URL = '/media/'
+MEDIA_URL = STATIC_URL + 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_FILE_STORAGE = 'storage_backends.MediaStorage'
 

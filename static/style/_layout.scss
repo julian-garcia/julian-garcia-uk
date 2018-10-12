@@ -73,6 +73,7 @@
 .page-content {
   &.home-content {
     .logos {
+      max-width: 100vw;
       img {
         width: 50%;
         vertical-align: middle;
@@ -84,6 +85,7 @@
       }
       .column {
         text-align: center;
+        width: 15%;
       }
     }
     .home-text {
