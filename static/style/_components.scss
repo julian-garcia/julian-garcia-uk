@@ -105,6 +105,9 @@ button:hover {
     .portfolio-modal-image {
       margin: 0;
     }
+    .portfolio-link.screenshot {
+      display: none;
+    }
   }
   &.attending-content {
     #map {
@@ -196,9 +199,6 @@ button:hover {
           float: left;
           margin-right: 10px;
         }
-        .position-heading {
-          display: inline;
-        }
       }
       .timeline-item-right {
         border-left: 1px solid black;
@@ -231,6 +231,9 @@ button:hover {
         max-width: 80%;
         margin: 0 auto;
         width: unset;
+      }
+      .portfolio-link.screenshot {
+        display: block;
       }
     }
   }
