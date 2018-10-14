@@ -176,6 +176,9 @@ button:hover {
         overflow: hidden;
       }
     }
+    .calendly-inline-widget, .calendly-inline-widget iframe {
+      min-height: 330px;
+    }
   }
   &.cv-content {
     .cv-downloads a {
