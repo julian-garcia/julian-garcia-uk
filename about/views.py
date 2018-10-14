@@ -20,7 +20,18 @@ def index(request):
         coding_seconds += code_activity['grand_total']['total_seconds']
     coding_hours = math.ceil(coding_seconds / 60 / 60)
 
+    # My meetup groups
+    meetups = requests.get('{0}{1}'.format(os.environ.get('MEETUP_API_URL'),os.environ.get('MEETUP_API_KEY')))
+    group_list = json.loads(meetups.content)
+
+    meetup_group_list = []
+    for group in group_list:
+        meetup_group_list.append({'name': group['name'],
+                                  'link': group['link'],
+                                  'image': group['key_photo']['photo_link']})
+
     return render(request, 'index.html',
                   {'languages': json.dumps(langs_dict),
                    'languages_mobile_svg': languages_mobile_svg,
-                   'coding_hours': coding_hours})
+                   'coding_hours': coding_hours,
+                   'meetup_group_list': sorted(meetup_group_list, key = lambda k: k['name'].upper())})

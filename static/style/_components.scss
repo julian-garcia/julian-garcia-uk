@@ -69,6 +69,23 @@ button:hover {
     .github-button {
       margin: 0px 10px 10px 0;
     }
+    .meetups{
+      position: relative;
+
+      .sub-heading {
+        line-height: 1.2rem;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      .meetup-link {
+        color: $link-teal;
+        margin-bottom: 2px;
+        &:hover {
+          color: $link-hover-orange;
+        }
+      }
+    }
   }
   &.experience-content {
     .timeline-item-right, .timeline-item-left {
@@ -234,6 +251,11 @@ button:hover {
       }
       .portfolio-link.screenshot {
         display: block;
+      }
+    }
+    &.home-content {
+      .meetups {
+        margin-right: 1rem;
       }
     }
   }

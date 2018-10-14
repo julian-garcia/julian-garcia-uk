@@ -2,6 +2,7 @@ const mobile_button_menu = document.getElementById('mobile-menu-button');
 const side_nav = document.querySelector('.side-nav');
 const my_name = 'Julian Garcia';
 const page_title = document.title.replace(`${my_name} - `,'');
+const meetups = document.querySelector('.meetups');
 
 // On page load highlight the relevant navigation menu item based on the current page title
 document.addEventListener('DOMContentLoaded', function(e) {
