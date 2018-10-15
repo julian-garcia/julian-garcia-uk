@@ -17,7 +17,7 @@
       </header>
       <div class="card-content">
         <div class="content">
-          {{ note.note_body | truncatewords:10 }}
+          {{ note.note_body | striptags | truncatewords:10 }}
           <br>
           <span>{{ note.date_saved }}</span>
         </div>
