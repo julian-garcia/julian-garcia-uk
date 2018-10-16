@@ -7,13 +7,15 @@ const meetups = document.querySelector('.meetups');
 // On page load highlight the relevant navigation menu item based on the current page title
 document.addEventListener('DOMContentLoaded', function(e) {
   Array.from(side_nav.children).forEach(function(nav_button) {
-    if (nav_button.textContent.trim().startsWith(page_title.trim()) ||
-        (page_title.trim() == my_name && nav_button.textContent.trim() == 'About Me')) {
-      nav_button.classList.remove('inactive-border');
-      nav_button.classList.add('active-border');
-    } else {
-      nav_button.classList.remove('active-border');
-      nav_button.classList.add('inactive-border');
+    if (nav_button.className.includes('button')) {
+      if (nav_button.textContent.trim().startsWith(page_title.trim()) ||
+          (page_title.trim() == my_name && nav_button.textContent.trim() == 'About Me')) {
+        nav_button.classList.remove('inactive-border');
+        nav_button.classList.add('active-border');
+      } else {
+        nav_button.classList.remove('active-border');
+        nav_button.classList.add('inactive-border');
+      }
     }
   });
 });

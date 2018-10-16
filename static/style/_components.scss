@@ -40,6 +40,12 @@ button:hover {
     font-size: 1.4rem;
     line-height: 1.4rem;
   }
+
+  .side-nav-img {
+    max-height: 22px;
+    float:left;
+    margin-right: 13px;
+  }
 }
 
 .page-content {
@@ -195,6 +201,10 @@ button:hover {
   &.notes-content {
     .notes-icon {
       cursor: default;
+    }
+    .notes-category {
+      position: absolute;
+      right: 5px;
     }
   }
   @include breakpoint(phablet) {
