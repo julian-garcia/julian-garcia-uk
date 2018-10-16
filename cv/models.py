@@ -9,4 +9,4 @@ class CVSection(models.Model):
     date_saved = models.DateField(auto_now=True)
 
     def __str__(self):
-        return 'Section {0}'.format(self.section_sequence)
+        return 'Section {0} - {1}'.format(self.section_sequence, self.section_title)

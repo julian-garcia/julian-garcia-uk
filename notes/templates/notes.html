@@ -3,8 +3,18 @@
 {% block page_title %}Julian Garcia - Notes{% endblock %}
 {% block content %}
 <div class="page-content notes-content">
+  <div class="category-filter has-text-centered">
+    <button class="button category-filter-button active-border" data-category='all'>
+      All
+    </button>
+    {% for category in categories %}
+      <button class="button category-filter-button inactive-border" data-category='{{ category | lower | cut:" " }}'>
+        {{ category }}
+      </button>
+    {% endfor %}
+  </div>
   {% for note in notes %}
-    <div class="card notes-col">
+    <div class="card notes-col" data-category='{{ note.category | lower | cut:" " }}'>
       <header class="card-header">
         <h3 class="card-header-title sub-heading">
           {{ note.note_title }}
@@ -29,4 +39,7 @@
     </div>
   {% endfor %}
 </div>
+{% endblock %}
+{% block ui_notes_js %}
+<script src="{% static 'scripts/ui_notes.js' %}"></script>
 {% endblock %}
