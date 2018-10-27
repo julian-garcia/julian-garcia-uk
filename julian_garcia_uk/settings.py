@@ -166,6 +166,5 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
 
 MARKDOWNIFY_WHITELIST_TAGS = [
-  'a',
-  'h1','h2','h3','p'
+  'a','h1','h2','h3','p', 'ul', 'ol', 'li', 'b', 'blockquote', 'strong', 'em'
 ]
