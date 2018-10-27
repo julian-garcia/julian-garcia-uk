@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load markdownify %}
 {% block page_title %}Julian Garcia - Note{% endblock %}
 {% block content %}
 <div class="page-content note-content">
   <div class="columns">
     <div class="column is-three-quarters-desktop">
-      <h3 class="sub-heading has-text-left">{{ note.note_title }}</h3>
-      <h3 class="has-text-left">Category: {{ note.category }}</h3>
+      <h2 class="sub-heading has-text-left">{{ note.note_title }}</h2>
+      <h4 class="has-text-left">Category: {{ note.category }}</h4>
       <h4>{{ note.date_saved }}</h4>
-      <p class="paragraph-text">{{ note.note_body|safe }}</p>
+      {{ note.note_body|safe|markdownify }}
     </div>
   </div>
 </div>

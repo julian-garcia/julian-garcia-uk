@@ -57,9 +57,17 @@ button:hover {
     }
   }
 
-  .paragraph-text {
+  .paragraph-text, &.note-content p {
     font-size: 24px;
     line-height: 28px;
+  }
+  &.note-content {
+    h2 {
+      font-size: 28px;
+    }
+    h3 {
+      font-size: 26px;
+    }
   }
   .sub-heading {
     font-size: 1.6rem;

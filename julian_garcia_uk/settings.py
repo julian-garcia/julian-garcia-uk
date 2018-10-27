@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'attending',
     'storages',
     'experience',
+    'markdownify',
 ]
 
 MIDDLEWARE = [
@@ -163,3 +164,8 @@ EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
+
+MARKDOWNIFY_WHITELIST_TAGS = [
+  'a',
+  'h1','h2','h3','p'
+]

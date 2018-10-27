@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load markdownify %}
 {% block page_title %}Julian Garcia - Notes{% endblock %}
 {% block content %}
 <div class="page-content notes-content">
@@ -28,7 +29,7 @@
       </header>
       <div class="card-content">
         <div class="content">
-          {{ note.note_body | striptags | truncatewords:10 }}
+          {{ note.note_body | markdownify | striptags | truncatewords:10 }}
           <br>
           <span>{{ note.date_saved }}</span>
         </div>
