@@ -14,7 +14,7 @@ def attending(request):
     coordinates.append(json.loads(coordinates_request.content)['results'][0]['geometry']['location'])
     coord_labels.append('Home')
 
-    events = Event.objects.all().order_by('event_date')
+    events = Event.objects.all().order_by('-event_date')[:5]
 
     for event in events:
         coordinates_request = requests.get('{0}/geocode/json?address={1}&key={2}'.format(gmap_api_url, event.event_postcode, gmap_api_key))
