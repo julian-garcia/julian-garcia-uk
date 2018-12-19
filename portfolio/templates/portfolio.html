@@ -45,6 +45,12 @@
             {% if tech.strip == "css" %}
               <i class="portfolio-tech-icon fab fa-css3"></i>
             {% endif %}
+            {% if tech.strip == "angular" %}
+              <i class="portfolio-tech-icon fab fa-angular"></i>
+            {% endif %}
+            {% if tech.strip == "typescript" %}
+              <img class="portfolio-tech" src="{% static 'images/typescript.svg' %}" alt="typescript">
+            {% endif %}
           {% endfor %}
         {% endif %}
       </div>
