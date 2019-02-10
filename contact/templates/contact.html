@@ -1,34 +1,33 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block page_title %}Julian Garcia - Contact{% endblock %}
+
+{% block email_js %}
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+<script src="{% static 'scripts/email.js' %}"></script>
+{% endblock %}
+
 {% block content %}
 <div class="page-content contact-content">
   <div class="columns">
     <div class="column is-8">
-      <form method='POST'>
-        {% csrf_token %}
-        {% for field in contact_form %}
-          {% if field.label == "Email Address" %}
+      <form id="email-form">
           <div class="field">
             <div class="control has-icons-left has-icons-right">
-              {{ field }}
+              <input type="text" name="email_address" class="contact-form-input input paragraph-text" placeholder="Email Address" required="" id="id_email_address">
               <span class="contact-form-icon icon is-small is-left">
                 <i class="fas fa-at"></i>
               </span>
             </div>
           </div>
-          {% endif %}
-          {% if field.label == "Your Message" %}
           <div class="field">
             <div class="control has-icons-left">
-              {{ field }}
+              <textarea name="message" cols="40" rows="10" class="contact-form-input textarea input paragraph-text" placeholder="Your Message" required="" id="id_message"></textarea>
               <span class="contact-form-icon icon is-small is-left">
                 <i class="fas fa-pencil-alt"></i>
               </span>
             </div>
           </div>
-          {% endif %}
-        {% endfor %}
         <div class="field">
           <div class="control has-icons-left">
             <button class="contact-form-input input" type="submit">Send Message</button>
