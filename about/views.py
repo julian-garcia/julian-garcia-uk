@@ -2,9 +2,12 @@ from django.shortcuts import render
 import requests, json, os, math
 
 def index(request):
-    languages = requests.get(os.environ.get('WAKATIME_URL'))
-    langs_list = json.loads(languages.content)['data']
-
+    try:
+        languages = requests.get(os.environ.get('WAKATIME_URL'))    
+        langs_list = json.loads(languages.content)['data']
+    except:
+        langs_list = []
+    
     langs_dict = {}
     for lang in langs_list:
         langs_dict[lang['name']] = lang['percent']

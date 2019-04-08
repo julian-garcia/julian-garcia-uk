@@ -4,7 +4,7 @@ botocore==1.12.11
 certifi==2018.8.24
 chardet==3.0.4
 dj-database-url==0.5.0
-Django==2.1.2
+Django==2.2
 django-markdownify==0.8.0
 django-storages==1.7.1
 docutils==0.14
@@ -19,5 +19,6 @@ pytz==2018.5
 requests==2.20.0
 s3transfer==0.1.13
 six==1.11.0
+sqlparse==0.3.0
 urllib3==1.23
 webencodings==0.5.1
