@@ -16,12 +16,14 @@
     <br>
     <p class="paragraph-text">Peruse my <a href="{% url 'portfolio' %}">portfolio</a> to experience deployed and usable implementations of my projects. Feel free to <a href="{% url 'contact' %}">get in touch</a> with any comments or suggestions.</p>
     <div class="meetups">
+      {% if meetup_group_list %}
       <h3 class="sub-heading"><i class="fab fa-meetup"></i> My Meetup Groups</h3>
       {% for meetup in meetup_group_list %}
         <a href="{{ meetup.link }}" class="meetup-link button is-small is-light is-rounded" target='blank'>
           {{ meetup.name|truncatechars:20 }}
         </a>
       {% endfor %}
+      {% endif %}
     </div>
   </div>
   <div class="logos images">
