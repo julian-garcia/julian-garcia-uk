@@ -3,16 +3,23 @@
 {% block page_title %}Julian Garcia{% endblock %}
 {% block content %}
 <div class="page-content home-content">
-  <div class="logos columns is-mobile">
-    <div class="column"><i class="fab fa-html5"></i></div>
-    <div class="column"><i class="fab fa-css3"></i></div>
-    <div class="column"><i class="fab fa-sass"></i></div>
-    <div class="column"><i class="fab fa-js"></i></div>
-    <div class="column"><i class="fab fa-python"></i></div>
-    <div class="column"><i class="fab fa-github"></i></div>
-  </div>
   <div class="home-text">
-    <p class="paragraph-text">The experience I have with the surrounding web languages, frameworks and platforms is show cased in my public <a href="#github">GitHub repositories</a>.</p>
+    <div class="logos columns is-mobile">
+      <div class="column"><i class="fab fa-html5"></i></div>
+      <div class="column"><i class="fab fa-css3"></i></div>
+      <div class="column"><i class="fab fa-sass"></i></div>
+      <div class="column"><i class="fab fa-js"></i></div>
+      <div class="column"><i class="fab fa-python"></i></div>
+      <div class="column"><i class="fab fa-github"></i></div>
+    </div>
+    <div class="logos columns is-mobile">
+      <div class="img-col"><img src="{% static 'images/django.png' %}" alt="django"></div>
+      <div class="img-col"><img src="{% static 'images/jquery.png' %}" alt="jquery"></div>
+      <div class="img-col"><img src="{% static 'images/flask.png' %}" alt="flask"></div>
+      <div class="img-col"><img src="{% static 'images/heroku.png' %}" alt="heroku"></div>
+      <div class="img-col"><img src="{% static 'images/sas.png' %}" alt="sas"></div>
+    </div>
+    <p class="paragraph-text">My <a href="#github">GitHub repositories</a> demonstrate my level of experience with the languages, frameworks and platforms above.</p>
     <br>
     <p class="paragraph-text">Peruse my <a href="{% url 'portfolio' %}">portfolio</a> to experience deployed and usable implementations of my projects. Feel free to <a href="{% url 'contact' %}">get in touch</a> with any comments or suggestions.</p>
     <div class="meetups">
@@ -25,13 +32,10 @@
       {% endfor %}
       {% endif %}
     </div>
-  </div>
-  <div class="logos images">
-    <div class="img-col"><img src="{% static 'images/django.png' %}" alt="django"></div>
-    <div class="img-col"><img src="{% static 'images/jquery.png' %}" alt="jquery"></div>
-    <div class="img-col"><img src="{% static 'images/flask.png' %}" alt="flask"></div>
-    <div class="img-col"><img src="{% static 'images/heroku.png' %}" alt="heroku"></div>
-    <div class="img-col"><img src="{% static 'images/sas.png' %}" alt="sas"></div>
+    <a name="github"></a>
+    <div class="github">
+      <h3 class="sub-heading"><i class="fab fa-github"></i> Github Repositories</h3>
+    </div>
   </div>
   <div class="coding-habits-title">
     <h3 class="sub-heading">
@@ -43,10 +47,6 @@
   <figure class="coding-habits-mobile inactive-border">
     <embed src="{{ languages_mobile_svg }}"></embed>
   </figure>
-  <a name="github"></a>
-  <div class="github">
-    <h3 class="sub-heading"><i class="fab fa-github"></i> Github Repositories</h3>
-  </div>
 </div>
 {% endblock %}
 {% block chart_js %}
